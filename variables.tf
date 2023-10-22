@@ -12,7 +12,7 @@ variable "default_pool_name" {
 
 variable "domains_count" {
   type    = number
-  default = 5
+  default = 4
 }
 
 variable "libvirt_network_name" {
@@ -46,7 +46,7 @@ variable "vcpu" {
 
 variable "memory" {
   type    = string
-  default = "8048"
+  default = "4048"
 }
 
 variable "autostart" {
