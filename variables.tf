@@ -62,3 +62,8 @@ variable "firmware" {
 variable "macvtap" {
   default = "enp58s0" # network interface
 }
+
+variable "domains_count_ol8" {
+  default = 1
+  type    = string
+}
