@@ -64,6 +64,6 @@ variable "macvtap" {
 }
 
 variable "domains_count_ol8" {
-  default = 1
+  default = 0
   type    = string
 }
