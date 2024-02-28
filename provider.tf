@@ -8,6 +8,5 @@ terraform {
 }
 
 provider "libvirt" {
-  alias = "localkvm"
-  uri   = var.libvirt_system
+  uri = var.libvirt_system
 }

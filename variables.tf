@@ -1,6 +1,6 @@
 variable "libvirt_system" {
   type        = string
-  default     = "qemu+ssh:///system"
+  default     = "qemu:///system"
   description = "(optional) default is qemu:///system"
 }
 
