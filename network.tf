@@ -8,6 +8,6 @@ resource "libvirt_network" "network" {
     local_only = true
   }
   dhcp {
-    enabled = true
+    enabled = false
   }
 }
