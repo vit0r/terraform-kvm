@@ -12,7 +12,7 @@ variable "default_pool_name" {
 
 variable "domains_count" {
   type    = number
-  default = 5
+  default = 3
 }
 
 variable "libvirt_network_name" {
