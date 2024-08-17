@@ -26,7 +26,6 @@ resource "libvirt_domain" "domain" {
   network_interface {
     network_id = libvirt_network.network.id
     hostname   = format("%s%s-%s", local.domain_name_domain, var.debian_codename, count.index)
-    addresses  = [format("192.168.124.%s", (count.index + 10))]
   }
   graphics {
     type        = "vnc"
