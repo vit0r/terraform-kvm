@@ -10,11 +10,6 @@ variable "default_pool_name" {
   description = "(optional) default pool name is default"
 }
 
-variable "domains_count" {
-  type    = number
-  default = 5
-}
-
 variable "libvirt_network_name" {
   type    = string
   default = "libvirttf"
@@ -40,7 +35,7 @@ variable "image_version" {
 }
 
 variable "vcpu" {
-  default = 4
+  default = 2
   type    = number
 }
 
@@ -66,4 +61,14 @@ variable "macvtap" {
 variable "domains_count_ol8" {
   default = 0
   type    = string
+}
+
+variable "domains_count_ol9" {
+  default = 1
+  type    = string
+}
+
+variable "domains_count_debian" {
+  type    = number
+  default = 0
 }

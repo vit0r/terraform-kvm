@@ -3,7 +3,7 @@ locals {
 }
 
 resource "libvirt_volume" "vol" {
-  count            = var.domains_count
+  count            = var.domains_count_debian
   name             = format("%s%s-%s", local.domain_name_domain, var.image_version, count.index)
   base_volume_id   = libvirt_volume.image.0.id
   size             = 26843545600 # 25gb
@@ -11,7 +11,7 @@ resource "libvirt_volume" "vol" {
 }
 
 resource "libvirt_domain" "domain" {
-  count      = var.domains_count
+  count      = var.domains_count_debian
   name       = format("%s%s-%s", local.domain_name_domain, var.image_version, count.index)
   cloudinit  = libvirt_cloudinit_disk.cloud_init.id
   arch       = "x86_64"
