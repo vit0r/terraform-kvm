@@ -29,8 +29,8 @@ variable "libvirt_network_mode" {
   default = "nat"
 }
 
-variable "image_version" {
-  default = "12"
+variable "debian_codename" {
+  default = "bookworm"
   type    = string
 }
 

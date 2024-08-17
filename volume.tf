@@ -1,8 +1,8 @@
-resource "libvirt_volume" "image" {
+resource "libvirt_volume" "image_debian" {
   count  = var.domains_count_debian > 0 ? 1 : 0
-  name   = "debian-disk-${var.image_version}-amd64.qcow2"
+  name   = "debian-disk-${var.debian_codename}-amd64.qcow2"
   format = "qcow2"
-  source = "https://cloud.debian.org/images/cloud/bookworm/latest/debian-${var.image_version}-generic-amd64.qcow2"
+  source = "https://cloud.debian.org/images/cloud/${var.debian_codename}/latest/debian-12-generic-amd64.qcow2"
   pool   = var.default_pool_name
 }
 

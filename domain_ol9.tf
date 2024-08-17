@@ -26,7 +26,7 @@ resource "libvirt_domain" "domain_ol9" {
   network_interface {
     network_id = libvirt_network.network.id
     hostname   = format("%s-%s", local.domain_name_domain_ol9, count.index)
-    addresses  = [format("192.168.124.%s", (count.index + 20))]
+    addresses  = [format("192.168.126.%s", (count.index + 20))]
   }
   graphics {
     type        = "vnc"
