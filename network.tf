@@ -5,7 +5,7 @@ resource "libvirt_network" "network" {
   autostart = true
   dns {
     enabled    = true
-    local_only = true
+    local_only = false
   }
   dhcp {
     enabled = true

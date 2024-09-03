@@ -70,5 +70,5 @@ variable "domains_count_ol9" {
 
 variable "domains_count_debian" {
   type    = number
-  default = 0
+  default = 4
 }

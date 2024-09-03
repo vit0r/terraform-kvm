@@ -12,20 +12,20 @@ resource "libvirt_volume" "vol" {
 
 resource "libvirt_domain" "domain" {
   count      = var.domains_count_debian
-  name       = format("%s%s-%s", local.domain_name_domain, var.debian_codename, count.index)
+  name       = format("%s-%s-%s", local.domain_name_domain, var.debian_codename, count.index)
   cloudinit  = libvirt_cloudinit_disk.cloud_init.id
   arch       = "x86_64"
   vcpu       = var.vcpu
   memory     = var.memory
   autostart  = var.autostart
-  qemu_agent = true
+  qemu_agent = false
   disk {
     volume_id = libvirt_volume.vol[count.index].id
     scsi      = "true"
   }
   network_interface {
     network_id = libvirt_network.network.id
-    hostname   = format("%s%s-%s", local.domain_name_domain, var.debian_codename, count.index)
+    hostname   = format("%s-%s-%s", local.domain_name_domain, var.debian_codename, count.index)
   }
   graphics {
     type        = "vnc"
