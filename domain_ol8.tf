@@ -18,7 +18,7 @@ resource "libvirt_domain" "domain_ol8" {
   vcpu       = var.vcpu
   memory     = var.memory
   autostart  = var.autostart
-  qemu_agent = true
+  qemu_agent = false
   disk {
     volume_id = libvirt_volume.vol_ol8[count.index].id
     scsi      = "true"

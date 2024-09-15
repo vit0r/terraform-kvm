@@ -29,11 +29,6 @@ variable "libvirt_network_mode" {
   default = "nat"
 }
 
-variable "debian_codename" {
-  default = "bookworm"
-  type    = string
-}
-
 variable "vcpu" {
   default = 2
   type    = number
@@ -41,7 +36,7 @@ variable "vcpu" {
 
 variable "memory" {
   type    = string
-  default = "4048"
+  default = "2048"
 }
 
 variable "autostart" {
@@ -68,7 +63,7 @@ variable "domains_count_ol9" {
   type    = string
 }
 
-variable "domains_count_debian" {
+variable "domains_count_debian_12" {
   type    = number
   default = 4
 }
