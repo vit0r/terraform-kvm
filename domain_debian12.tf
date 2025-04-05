@@ -4,7 +4,7 @@ locals {
 
 resource "libvirt_volume" "vol" {
   count            = var.domains_count_debian_12
-  name             = format("%s-%s", local.domain_name_domain, count.index)
+  name             = format("%s-%s.%s", local.domain_name_domain, count.index, libvirt_volume.image_debian_12.0.format)
   base_volume_id   = libvirt_volume.image_debian_12.0.id
   size             = 26843545600 # 25gb
   base_volume_pool = var.default_pool_name
@@ -23,10 +23,10 @@ resource "libvirt_domain" "domain" {
     volume_id = libvirt_volume.vol[count.index].id
     scsi      = "true"
   }
-  network_interface {
-    network_id = libvirt_network.network.id
-    hostname   = format("%s-%s", local.domain_name_domain, count.index)
-  }
+  # network_interface {
+  #   network_id = libvirt_network.network.id
+  #   hostname   = format("%s-%s", local.domain_name_domain, count.index)
+  # }
   graphics {
     type        = "vnc"
     listen_type = "address"
