@@ -23,10 +23,10 @@ resource "libvirt_domain" "domain" {
     volume_id = libvirt_volume.vol[count.index].id
     scsi      = "true"
   }
-  # network_interface {
-  #   network_id = libvirt_network.network.id
-  #   hostname   = format("%s-%s", local.domain_name_domain, count.index)
-  # }
+  network_interface {
+    network_name = "internal-network"
+    hostname     = format("%s-%s", local.domain_name_domain, count.index)
+  }
   graphics {
     type        = "vnc"
     listen_type = "address"
