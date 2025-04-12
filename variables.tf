@@ -41,7 +41,7 @@ variable "memory" {
 
 variable "autostart" {
   type    = bool
-  default = false
+  default = true
 }
 
 variable "firmware" {
