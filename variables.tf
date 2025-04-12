@@ -65,7 +65,7 @@ variable "domains_count_ol9" {
 
 variable "domains_count_debian_12" {
   type    = number
-  default = 2
+  default = 10
 }
 
 variable "qemu_agent" {
