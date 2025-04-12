@@ -18,7 +18,7 @@ resource "libvirt_domain" "domain" {
   vcpu       = var.vcpu
   memory     = var.memory
   autostart  = var.autostart
-  qemu_agent = true
+  qemu_agent = var.qemu_agent
   disk {
     volume_id = libvirt_volume.vol[count.index].id
     scsi      = "true"

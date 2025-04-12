@@ -67,3 +67,8 @@ variable "domains_count_debian_12" {
   type    = number
   default = 2
 }
+
+variable "qemu_agent" {
+  type    = bool
+  default = true
+}
