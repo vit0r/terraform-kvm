@@ -4,11 +4,11 @@ resource "libvirt_network" "network" {
   addresses = [var.libvirt_network_cidr]
   autostart = true
   dns {
-    enabled    = true
+    enabled    = false
     local_only = false
   }
   dhcp {
-    enabled = true
+    enabled = false
   }
 }
 

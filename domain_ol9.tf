@@ -18,14 +18,14 @@ resource "libvirt_domain" "domain_ol9" {
   vcpu       = var.vcpu
   memory     = var.memory
   autostart  = var.autostart
-  qemu_agent = false
+  qemu_agent = var.qemu_agent
   disk {
     volume_id = libvirt_volume.vol_ol9[count.index].id
     scsi      = "true"
   }
   network_interface {
     network_name = "internal-network"
-    hostname     = format("%s-%s", local.domain_name_domain_ol9, count.index)
+    hostname     = format("%s-%s", local.domain_name_domain, count.index)
   }
   graphics {
     type        = "vnc"
