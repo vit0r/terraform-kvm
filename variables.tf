@@ -29,14 +29,24 @@ variable "libvirt_network_mode" {
   default = "nat"
 }
 
-variable "vcpu" {
-  default = 2
+variable "k8s_vcpu" {
+  default = 4
   type    = number
 }
 
-variable "memory" {
+variable "k8s_memory" {
   type    = string
-  default = "2048"
+  default = "8048"
+}
+
+variable "nfs_vcpu" {
+  default = 1
+  type    = number
+}
+
+variable "nfs_memory" {
+  type    = string
+  default = "1024"
 }
 
 variable "autostart" {
@@ -63,9 +73,14 @@ variable "domains_count_ol9" {
   type    = string
 }
 
-variable "domains_count_debian_12" {
+variable "k8s_count_debian_12" {
   type    = number
-  default = 6
+  default = 3
+}
+
+variable "nfs_count_debian_12" {
+  type    = number
+  default = 1
 }
 
 variable "qemu_agent" {
