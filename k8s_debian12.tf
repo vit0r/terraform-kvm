@@ -5,7 +5,7 @@ locals {
 resource "libvirt_volume" "k8s_vol" {
   count            = var.k8s_count_debian_12
   name             = format("%s-%s.%s", local.k8s_domain_name_domain, count.index, libvirt_volume.k8s_image_debian_12.0.format)
-  base_volume_id   = libvirt_volume.image_debian_12.0.id
+  base_volume_id   = libvirt_volume.k8s_image_debian_12.0.id
   size             = 26843545600 # 25gb
   base_volume_pool = var.default_pool_name
 }

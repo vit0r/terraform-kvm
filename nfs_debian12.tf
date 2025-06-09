@@ -5,7 +5,7 @@ locals {
 resource "libvirt_volume" "nfs_vol" {
   count            = var.nfs_count_debian_12
   name             = format("%s-%s.%s", local.nfs_domain_name_domain, count.index, libvirt_volume.nfs_image_debian_12.0.format)
-  base_volume_id   = libvirt_volume.image_debian_12.0.id
+  base_volume_id   = libvirt_volume.nfs_image_debian_12.0.id
   size             = 26843545600 # 25gb
   base_volume_pool = var.default_pool_name
 }
