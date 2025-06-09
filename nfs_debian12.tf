@@ -2,7 +2,7 @@ locals {
   domain_name_domain = "nfs-debian12"
 }
 
-resource "libvirt_volume" "vol" {
+resource "libvirt_volume" "nfs_vol" {
   count            = var.nfs_count_debian_12
   name             = format("%s-%s.%s", local.domain_name_domain, count.index, libvirt_volume.image_debian_12.0.format)
   base_volume_id   = libvirt_volume.image_debian_12.0.id
@@ -10,7 +10,7 @@ resource "libvirt_volume" "vol" {
   base_volume_pool = var.default_pool_name
 }
 
-resource "libvirt_domain" "domain" {
+resource "libvirt_domain" "nfs_domain" {
   count      = var.nfs_count_debian_12
   name       = format("%s-%s", local.domain_name_domain, count.index)
   cloudinit  = libvirt_cloudinit_disk.cloud_init.id
@@ -20,7 +20,7 @@ resource "libvirt_domain" "domain" {
   autostart  = var.autostart
   qemu_agent = var.qemu_agent
   disk {
-    volume_id = libvirt_volume.vol[count.index].id
+    volume_id = libvirt_volume.nfs_vol[count.index].id
     scsi      = "true"
   }
   network_interface {
