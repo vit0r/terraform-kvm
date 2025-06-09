@@ -25,7 +25,7 @@ resource "libvirt_domain" "domain_ol9" {
   }
   network_interface {
     network_name = "internal-network"
-    hostname     = format("%s-%s", local.domain_name_domain, count.index)
+    hostname     = format("%s-%s", local.domain_name_domain_ol9, count.index)
   }
   graphics {
     type        = "vnc"

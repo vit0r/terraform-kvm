@@ -1,5 +1,21 @@
+resource "libvirt_volume" "nfs_image_debian_12" {
+  count  = var.nfs_count_debian_12 > 0 ? 1 : 0
+  name   = "nfs-debian-disk-12-amd64-${count.index}.qcow2"
+  format = "qcow2"
+  source = "https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2"
+  pool   = var.default_pool_name
+}
+
+resource "libvirt_volume" "k8s_image_debian_12" {
+  count  = var.nfs_count_debian_12 > 0 ? 1 : 0
+  name   = "k8s-debian-disk-12-amd64-${count.index}.qcow2"
+  format = "qcow2"
+  source = "https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2"
+  pool   = var.default_pool_name
+}
+
 resource "libvirt_volume" "image_debian_12" {
-  count  = var.domains_count_debian_12 > 0 ? 1 : 0
+  count  = var.count_debian_12 > 0 ? 1 : 0
   name   = "debian-disk-12-amd64-${count.index}.qcow2"
   format = "qcow2"
   source = "https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2"

@@ -49,6 +49,16 @@ variable "nfs_memory" {
   default = "1024"
 }
 
+variable "vcpu" {
+  default = 1
+  type    = number
+}
+
+variable "memory" {
+  type    = string
+  default = "1024"
+}
+
 variable "autostart" {
   type    = bool
   default = true
@@ -69,7 +79,7 @@ variable "domains_count_ol8" {
 }
 
 variable "domains_count_ol9" {
-  default = 1
+  default = 0
   type    = string
 }
 
@@ -81,6 +91,11 @@ variable "k8s_count_debian_12" {
 variable "nfs_count_debian_12" {
   type    = number
   default = 1
+}
+
+variable "count_debian_12" {
+  type    = number
+  default = 0
 }
 
 variable "qemu_agent" {
