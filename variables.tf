@@ -93,9 +93,17 @@ variable "nfs_count_debian_12" {
   default = 1
 }
 
+variable "nfs_vol_size_debian_12" {
+  default = 128000000000
+}
+
 variable "count_debian_12" {
   type    = number
   default = 0
+}
+
+variable "vol_size_debian_12" {
+  default = 26843545600
 }
 
 variable "qemu_agent" {
