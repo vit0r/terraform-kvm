@@ -102,6 +102,11 @@ variable "count_debian_12" {
   default = 0
 }
 
+variable "dhw_count_debian_12" {
+  type    = number
+  default = 2
+}
+
 variable "vol_size_debian_12" {
   default = 26843545600
 }
@@ -109,4 +114,14 @@ variable "vol_size_debian_12" {
 variable "qemu_agent" {
   type    = bool
   default = false
+}
+
+variable "dhw_vcpu" {
+  type    = number
+  default = 4
+}
+
+variable "dhw_memory" {
+  type    = number
+  default = 8
 }
