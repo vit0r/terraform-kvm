@@ -104,7 +104,7 @@ variable "count_debian_12" {
 
 variable "dhw_count_debian_12" {
   type    = number
-  default = 2
+  default = 0
 }
 
 variable "vol_size_debian_12" {
