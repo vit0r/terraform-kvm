@@ -22,7 +22,7 @@ resource "libvirt_volume" "dhw_image_debian_12" {
   pool   = var.default_pool_name
 }
 
-resource "libvirt_volume" "image_debian_12" {
+resource "libvirt_volume" "generic_image_debian_12" {
   count  = var.count_debian_12 > 0 ? 1 : 0
   name   = "debian-disk-12-amd64-${count.index}.qcow2"
   format = "qcow2"

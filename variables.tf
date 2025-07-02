@@ -93,6 +93,11 @@ variable "nfs_count_debian_12" {
   default = 1
 }
 
+variable "generic_count_debian_12" {
+  type    = number
+  default = 1
+}
+
 variable "nfs_vol_size_debian_12" {
   default = 128000000000
 }
@@ -124,4 +129,14 @@ variable "dhw_vcpu" {
 variable "dhw_memory" {
   type    = number
   default = 8
+}
+
+variable "generic_vcpu" {
+  type    = number
+  default = 1
+}
+
+variable "generic_memory" {
+  type    = number
+  default = 1
 }
