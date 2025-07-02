@@ -127,8 +127,8 @@ variable "dhw_vcpu" {
 }
 
 variable "dhw_memory" {
-  type    = number
-  default = 8
+  type    = string
+  default = "8048"
 }
 
 variable "generic_vcpu" {
@@ -137,6 +137,6 @@ variable "generic_vcpu" {
 }
 
 variable "generic_memory" {
-  type    = number
-  default = 1
+  type    = string
+  default = "1024"
 }
