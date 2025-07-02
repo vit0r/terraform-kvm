@@ -24,7 +24,7 @@ resource "libvirt_volume" "dhw_image_debian_12" {
 
 resource "libvirt_volume" "generic_image_debian_12" {
   count  = var.generic_count_debian_12 > 0 ? 1 : 0
-  name   = "debian-disk-12-amd64-${count.index}.qcow2"
+  name   = "gen-debian-disk-12-amd64-${count.index}.qcow2"
   format = "qcow2"
   source = "https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2"
   pool   = var.default_pool_name

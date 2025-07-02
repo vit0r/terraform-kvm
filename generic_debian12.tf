@@ -20,7 +20,7 @@ resource "libvirt_domain" "generic_domain" {
   autostart  = var.autostart
   qemu_agent = var.qemu_agent
   disk {
-    volume_id = libvirt_volume.generic_vol[count.index].id
+    volume_id = libvirt_volume.generic_image_debian_12[count.index].id
     scsi      = "true"
   }
   network_interface {
