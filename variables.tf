@@ -113,7 +113,7 @@ variable "dhw_count_debian_12" {
 }
 
 variable "vol_size_debian_12" {
-  default = 26843545600
+  default = 128000000000
 }
 
 variable "qemu_agent" {
