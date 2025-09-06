@@ -46,7 +46,7 @@ variable "nfs_vcpu" {
 
 variable "nfs_memory" {
   type    = string
-  default = "1024"
+  default = "2048"
 }
 
 variable "vcpu" {
@@ -85,7 +85,7 @@ variable "domains_count_ol9" {
 
 variable "k8s_count_debian_12" {
   type    = number
-  default = 3
+  default = 0
 }
 
 variable "nfs_count_debian_12" {
@@ -138,5 +138,10 @@ variable "generic_vcpu" {
 
 variable "generic_memory" {
   type    = string
-  default = "1024"
+  default = "2048"
+}
+
+variable "network_name" {
+  type    = string
+  default = "internal-network"
 }

@@ -24,7 +24,7 @@ resource "libvirt_domain" "domain_ol9" {
     scsi      = "true"
   }
   network_interface {
-    network_name = "internal-network"
+    network_name = var.network_name
     hostname     = format("%s-%s", local.domain_name_domain_ol9, count.index)
   }
   graphics {

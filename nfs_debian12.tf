@@ -24,7 +24,7 @@ resource "libvirt_domain" "nfs_domain" {
     scsi      = "true"
   }
   network_interface {
-    network_name = "internal-network"
+    network_name = var.network_name
     hostname     = format("%s-%s", local.nfs_domain_name_domain, count.index)
   }
   graphics {
