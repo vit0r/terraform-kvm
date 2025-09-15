@@ -95,7 +95,7 @@ variable "nfs_count_debian_12" {
 
 variable "generic_count_debian_12" {
   type    = number
-  default = 1
+  default = 2
 }
 
 variable "nfs_vol_size_debian_12" {
