@@ -40,7 +40,7 @@ variable "k8s_memory" {
 }
 
 variable "nfs_vcpu" {
-  default = 0
+  default = 2
   type    = number
 }
 
@@ -90,7 +90,7 @@ variable "k8s_count_debian_12" {
 
 variable "nfs_count_debian_12" {
   type    = number
-  default = 0
+  default = 1
 }
 
 variable "generic_count_debian_12" {
