@@ -36,7 +36,7 @@ variable "k8s_vcpu" {
 
 variable "k8s_memory" {
   type    = string
-  default = "16048"
+  default = "10048"
 }
 
 variable "nfs_vcpu" {
