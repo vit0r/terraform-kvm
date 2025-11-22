@@ -36,11 +36,11 @@ variable "k8s_vcpu" {
 
 variable "k8s_memory" {
   type    = string
-  default = "8048"
+  default = "16048"
 }
 
 variable "nfs_vcpu" {
-  default = 1
+  default = 0
   type    = number
 }
 
@@ -85,17 +85,17 @@ variable "domains_count_ol9" {
 
 variable "k8s_count_debian_12" {
   type    = number
-  default = 0
+  default = 2
 }
 
 variable "nfs_count_debian_12" {
   type    = number
-  default = 1
+  default = 0
 }
 
 variable "generic_count_debian_12" {
   type    = number
-  default = 2
+  default = 0
 }
 
 variable "nfs_vol_size_debian_12" {
@@ -133,7 +133,7 @@ variable "dhw_memory" {
 
 variable "generic_vcpu" {
   type    = number
-  default = 1
+  default = 0
 }
 
 variable "generic_memory" {
@@ -143,5 +143,5 @@ variable "generic_memory" {
 
 variable "network_name" {
   type    = string
-  default = "internal-network"
+  default = "default"
 }
