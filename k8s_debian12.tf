@@ -24,7 +24,7 @@ resource "libvirt_domain" "k8s_domain" {
     scsi      = "true"
   }
   network_interface {
-    network_name = var.network_name
+    network_name = var.k8s_network_name
     hostname     = format("%s-%s", local.k8s_domain_name_domain, count.index)
   }
   graphics {

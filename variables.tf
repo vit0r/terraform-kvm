@@ -141,6 +141,16 @@ variable "generic_memory" {
   default = "2048"
 }
 
+variable "nfs_network_name" {
+  type    = string
+  default = "internal-network"
+}
+
+variable "k8s_network_name" {
+  type    = string
+  default = "internal-network"
+}
+
 variable "network_name" {
   type    = string
   default = "default"
