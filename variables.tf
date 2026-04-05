@@ -36,7 +36,7 @@ variable "k8s_vcpu" {
 
 variable "k8s_memory" {
   type    = string
-  default = "10048"
+  default = "8048"
 }
 
 variable "nfs_vcpu" {
@@ -50,13 +50,13 @@ variable "nfs_memory" {
 }
 
 variable "vcpu" {
-  default = 1
+  default = 4
   type    = number
 }
 
 variable "memory" {
   type    = string
-  default = "1024"
+  default = "8048"
 }
 
 variable "autostart" {
@@ -85,7 +85,7 @@ variable "domains_count_ol9" {
 
 variable "k8s_count_debian_12" {
   type    = number
-  default = 2
+  default = 3
 }
 
 variable "nfs_count_debian_12" {
