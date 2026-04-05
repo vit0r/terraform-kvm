@@ -36,7 +36,7 @@ variable "k8s_vcpu" {
 
 variable "k8s_memory" {
   type    = string
-  default = "8048"
+  default = "8000"
 }
 
 variable "nfs_vcpu" {
@@ -56,7 +56,7 @@ variable "vcpu" {
 
 variable "memory" {
   type    = string
-  default = "8048"
+  default = "8000"
 }
 
 variable "autostart" {
